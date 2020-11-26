@@ -11,15 +11,70 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Recipe.belongsTo(models.User, {foreignKey: 'UserId'})
     }
   };
   Recipe.init({
-    name: DataTypes.STRING,
-    type: DataTypes.STRING,
-    ingredients: DataTypes.STRING,
-    steps: DataTypes.STRING,
-    portion: DataTypes.INTEGER,
-    cooking_time: DataTypes.STRING
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate:{
+        notEmpty:{
+          args: true,
+          msg: `Name is required!`
+        }
+      }
+    },
+    type: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate:{
+        notEmpty:{
+          args: true,
+          msg: `Type is required!`
+        }
+      }
+    },
+    ingredients: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate:{
+        notEmpty:{
+          args: true,
+          msg: `Ingredients is required!`
+        }
+      }
+    },
+    steps: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate:{
+        notEmpty:{
+          args: true,
+          msg: `Steps is required!`
+        }
+      }
+    },
+    portion: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate:{
+        notEmpty:{
+          args: true,
+          msg: `portion is required!`
+        }
+      }
+    },
+    cooking_time: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate:{
+        notEmpty:{
+          args: true,
+          msg: `Cooking Time is required!`
+        }
+      }
+    }
   }, {
     sequelize,
     modelName: 'Recipe',
