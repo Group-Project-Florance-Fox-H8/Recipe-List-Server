@@ -556,9 +556,9 @@ _Response (500 - Bad Request)_
 }
 ```
 ---
-### GET /edamam
+### POST /edamam
 
-> Get all recipe edamam
+> Post all recipe edamam
 
 _Request Params_
 ```
