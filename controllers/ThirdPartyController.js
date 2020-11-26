@@ -31,7 +31,7 @@ class ThridPartyController {
     }
 
     static async getRecipes2(req, res, next) {
-        const keyword = "beef";
+        const keyword = "beef";     //ini diganti req.body.food
         const YOUR_APP_ID = "35783e5b";
         const YOUR_APP_KEY = "33d13f3e08f3c530de88c53fceb5219f";
         const response = await axios({
