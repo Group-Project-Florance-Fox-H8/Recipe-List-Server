@@ -78,7 +78,7 @@ class RecipeController {
                     id
                 }
             });
-            res.status(200).json({ message: "The recipe has been successfully deleted." });
+            res.status(200).json({ msg: "The recipe has been successfully deleted." });
         } catch (err) {
             next(err);
         }
