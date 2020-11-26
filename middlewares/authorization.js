@@ -1,15 +1,15 @@
-const {Todo} = require('../models/index');
+const {Recipe} = require('../models/index');
 
 async function authorization(req, res, next) {
     const id = +req.params.id;
     try {
-        const todo = await Todo.findByPk(id);
-        if (!todo) {
+        const recipe = await Recipe.findByPk(id);
+        if (!recipe) {
             return next({
                 name: 'NotFound',
                 msg: 'Error Not Found!'
             })
-        } else if (todo.UserId === req.loggedInUser.id) {
+        } else if (recipe.UserId === req.loggedInUser.id) {
             next();
         } else {
             return next({
