@@ -1,10 +1,19 @@
 # Recipe List Documentation
 
 Recipe List is an application to store recipes and search for the recipe we want. This app has : 
-* RESTful endpoint for todo's CRUD operation
+* Zomato Api
+* Edamam Healty Api
+* The MealDB Api
+* Google Sign-in
 * JSON formatted response
 
-## RESTful endpoints
+# URL
+```
+Client URL : http://localhost:8080
+Server URL : http://localhost:3000
+```
+
+## ENDPOINT
 ### POST /login
 
 _Request Params_
