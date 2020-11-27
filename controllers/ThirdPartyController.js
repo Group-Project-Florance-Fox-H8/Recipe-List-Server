@@ -31,17 +31,19 @@ class ThridPartyController {
     }
 
     static async edamam(req, res, next) {
-        const keyword = req.body.food;     
-        const YOUR_APP_ID = process.env.APP_ID;
-        const YOUR_APP_KEY = process.env.APP_KEY;
-        const response = await axios({
-            url: `https://api.edamam.com/search?q=${keyword}&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}`,
-            method: "GET"
-        });
-        // console.log(response.data);
-        res.json(response.data);
-    } catch (err) {
-        next(err);
+        try{
+            const keyword = req.body.food;     
+            const YOUR_APP_ID = process.env.APP_ID;
+            const YOUR_APP_KEY = process.env.APP_KEY;
+            const response = await axios({
+                url: `https://api.edamam.com/search?q=${keyword}&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}`,
+                method: "GET",
+            });
+            // console.log(response.data);
+            res.json(response.data);
+        } catch (err) {
+            next(err);
+        }
     }
 }
 
