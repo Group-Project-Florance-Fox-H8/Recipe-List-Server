@@ -11,7 +11,7 @@ class ThridPartyController {
                 method: "GET"
             });
             // console.log(response.data);
-            res.json(response.data);
+            res.status(200).json(response.data);
         } catch (err) {
             next(err);
         }
@@ -24,7 +24,7 @@ class ThridPartyController {
                 method: "GET"
             });
             // console.log(response.data);
-            res.json(response.data);
+            res.status(200).json(response.data);
         } catch (err) {
             next(err);
         }
@@ -40,7 +40,7 @@ class ThridPartyController {
                 method: "GET",
             });
             // console.log(response.data);
-            res.json(response.data);
+            res.status(200).json(response.data);
         } catch (err) {
             next(err);
         }
